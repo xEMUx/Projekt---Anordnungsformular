@@ -1,0 +1,248 @@
+body{
+    background-color: rgb(243, 245, 238);
+    font-family: 'Calibri', sans-serif;
+}
+
+.headline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #a1bfec;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+
+    min-height: 3vh ;
+    min-width: 15vw;
+    max-height: 10vh;
+    font-size: clamp(0.5rem , 3vw, 2.3rem);
+    box-shadow: 5px 5px rgba(0,0,0,0.3) ;
+
+}
+
+
+
+.text_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 70px;
+    
+}
+
+
+.links{
+/* hier noch ausrichten*/
+    max-width: 200px;
+}
+
+.rechts{
+/* hier noch ausrichten*/
+    max-width: 600px;    
+}
+
+
+
+
+#tester{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+.formular_container{   
+    
+    margin: 2rem;
+    background-color: #f1f1f1;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 25px;
+    overflow: hidden;
+    min-height: 280px;
+
+    box-shadow: 5px 5px rgba(0,0,0,0.3) ;
+}
+
+
+
+
+
+/* Dropdown-Menus */
+.dropdown_container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.dropdown_standards .dropdown_kb {
+    position: relative;
+    display: inline-block;
+
+}
+
+/* Dropdown-Buttons */
+.btn_dropdown {
+    background-color: lightgray;
+    color: black;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 2px solid gray;
+    cursor: pointer;
+    min-width: 155px;
+}
+
+.dropdown_inhalt {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 151px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border: 2px solid gray;
+    border-radius: 0px 0px 4px 4px;
+    z-index: 1;
+}
+
+/* Links im Dropdown */
+.dropdown_inhalt a {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown_inhalt a:hover {
+    background-color: #a1bfec;
+}
+
+/* Dropdown anzeigen, wenn Maus drüber */
+.dropdown_standards:hover .dropdown_inhalt {
+    display: block;
+}
+
+/* Button-Farbe ändern bei Hover */
+.dropdown_standards:hover .btn_dropdown {
+    background-color: lightgray;
+}
+
+.dropdown_kb:hover .dropdown_inhalt {
+    display: block;
+}
+
+/* Button-Farbe ändern bei Hover */
+.dropdown_kb:hover .btn_dropdown {
+    background-color: lightgray;
+}
+
+
+/* FELDER */
+
+.felder_container{
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text_1, .text_2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+h3, .ausgabe{
+    display: flex;
+    align-items: center;
+    border: 2px solid grey;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+h3{
+   /*width: 90px;*/
+   justify-content: center;
+   background-color: lightgray;
+}
+
+.ausgabe{
+    width: 220px;
+}
+
+#ausgabe_satz{
+    opacity: 0;
+
+
+}
+
+.bild_container{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+    align-items: center;
+
+}
+
+#bild_1{
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0,0,0,0.3) ;
+    min-width: 600px;
+    max-width: 1200px;
+}
+
+
+#bild_2{
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0,0,0,0.3) ;
+    min-width: 600px;
+    max-width: 1200px;
+}
+
+
+h2{
+    text-align: left;
+}
+
+
+
+
+
+#btn_back{
+    position: sticky;
+    bottom: 35px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+
+    border: 3px solid gray;
+    border-radius: 5px;
+    background-color: lightgray;
+    box-shadow: 3px 3px rgba(0,0,0,0.3) ;
+    min-height: 0.8vh;
+    max-height: 3vh;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    font-size: clamp(0.5rem , 2vw, 1rem);
+    cursor: pointer;
+}
+
+#btn_back:hover{
+    background-color: #a1bfec;
+
+}
+
+#btn_back:active{
+    background-color: #a1bfec;
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px rgba(0,0,0,0.3) ;
+}
