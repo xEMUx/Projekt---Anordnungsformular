@@ -1,80 +1,80 @@
-body{
-    background-color: rgb(243, 245, 238);
-    font-family: 'Calibri', sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-/* HEADLINE */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 
-.headline{
+body {
+    background-color: rgb(243, 245, 238);
+    font-family: 'Calibri', sans-serif;
+    min-width: 300px;
+}
+
+/* headline */
+
+.headline {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid black;
     border-radius: 10px;
     background-color: #a1bfec;
-    margin-left: 30vw;
-    margin-right: 30vw;
-    margin-top: 5vw;
-    margin-bottom: 5vw;
-
-    min-height: 3vh ;
-    min-width: 15vw;
+    width: 40vw;
+    max-width: 700px;
+    min-width: 280px;
+    min-height: 3vh;
     max-height: 13vh;
-    font-size: clamp(0.5rem , 3vw, 3rem);
-
+    margin: 5vw auto;
+    padding: 10px 20px;
+    font-size: clamp(0.8rem, 3vw, 3rem);
+    text-align: center;
 }
 
-
-/* BUTTONS */
-
-.btn_container{
+.btn_container {
     display: flex;
     flex-direction: column;
     gap: 1vh;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-button{
+/* buttons */
+
+button {
+    width: 100%;
+    min-height: 60px;
+    height: 10vh;
     border: 3px solid gray;
     border-radius: 10px;
-    box-shadow: 0px 0px rgba(0,0,0,0.3) ;
-    height: 10vh;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    font-size: clamp(0.4rem , 5vw, 2rem);
+    box-shadow: 0 0 rgba(0, 0, 0, 0.3);
+    font-size: clamp(1rem, 3vw, 2rem);
     cursor: pointer;
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        background-color 0.2s ease;
 }
 
-button:hover{
+button:hover {
     background-color: #a1bfec;
     border: 3px solid #a1bfec;
-    border-radius: 10px;
-    box-shadow: 5px 5px rgba(0,0,0,0.3) ;
-    height: 10vh;
-    transform: translate(-5 px, -5 px);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+    transform: translate(-5px, -5px);
 }
 
-button:active{
+button:active {
     background-color: #a1bfec;
     border: 3px solid #a1bfec;
-    border-radius: 10px;
-    box-shadow: 0px 0px rgba(0,0,0,0.3) ;
-    height: 10vh;
+    box-shadow: 0 0 rgba(0, 0, 0, 0.3);
     transform: translate(5px, 5px);
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease ;
 }
 
-
-
-
-
-
-
-/* PDF MODAL */
-
+/* pdf modal */
 
 .pdf_modal {
     display: none;
@@ -82,19 +82,23 @@ button:active{
     inset: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(243, 245, 238, 0.3);
+    background-color: rgba(0, 0, 0, 0.45);
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 1000;
+    padding: 2vh 2vw;
 }
 
 .pdf_modal_inhalt {
     width: 90vw;
     height: 90vh;
+    max-width: 1400px;
+    max-height: 95vh;
     background-color: rgb(243, 245, 238);
     border: 3px solid black;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
 }
 
 #pdfViewer {
@@ -104,3 +108,103 @@ button:active{
     display: block;
 }
 
+/* responsive */
+
+@media (max-width: 600px) {
+
+    .headline {
+        width: 92%;
+        min-width: 0;
+        margin: 8vh auto 6vh;
+        padding: 8px 10px;
+        font-size: clamp(1.2rem, 7vw, 2rem);
+    }
+
+    .btn_container {
+        width: 92%;
+        gap: 12px;
+    }
+
+    button {
+        min-height: 65px;
+        height: auto;
+        padding: 12px 8px;
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .pdf_modal {
+        padding: 10px;
+    }
+
+    .pdf_modal_inhalt {
+        width: 96vw;
+        height: 94vh;
+        border-width: 2px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .headline {
+        width: 94%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        padding: 8px 5px;
+        font-size: 1.3rem;
+    }
+
+    .btn_container {
+        width: 94%;
+    }
+
+    button {
+        min-height: 60px;
+        padding: 10px 5px;
+        font-size: 1rem;
+        border-width: 2px;
+    }
+
+    button:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    button:active {
+        transform: translate(3px, 3px);
+    }
+
+    .pdf_modal {
+        padding: 5px;
+    }
+
+    .pdf_modal_inhalt {
+        width: 98vw;
+        height: 96vh;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .headline {
+        width: 96%;
+        font-size: 1.1rem;
+    }
+
+    .btn_container {
+        width: 96%;
+    }
+
+    button {
+        min-height: 55px;
+        font-size: 0.95rem;
+        padding: 8px 4px;
+    }
+
+    .pdf_modal_inhalt {
+        width: 99vw;
+        height: 97vh;
+        border-width: 2px;
+    }
+}
